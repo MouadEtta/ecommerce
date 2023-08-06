@@ -1,0 +1,13 @@
+/* app.component.scss */
+
+/* Centra il logo */
+:host ::ng-deep .p-menubar-start {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Rendi il menubar trasparente */
+  :host ::ng-deep .p-menubar {
+    background-color: transparent;
+    border-color: transparent;
+  }
