@@ -1,8 +1,25 @@
-<p-menubar [model]="items">
-    <ng-template pTemplate="start">
-        <img src="https://primefaces.org/cdn/primeng/images/primeng.svg" height="40" class="mr-2" />
-    </ng-template>
-    <ng-template pTemplate="end">
-        <input type="text" pInputText placeholder="Search" class="w-full" />
-    </ng-template>
-</p-menubar>
+<div class="header"> 
+    <div class="menu-icon-container">
+     <button type="button" pButton icon="pi pi-bars" (click)="menu.toggle($event)"></button>
+   </div>
+   <div class="logo-container">
+     <img src="assets/logosito-removebg-preview.png" alt="Logo del sito">
+   </div>
+   <button type="button" pButton label="search" (click)="op.toggle($event)"></button>
+  
+   <p-overlayPanel #op>
+     <ng-template pTemplate="content">
+       <span class="p-input-icon-left">
+         <i class="pi pi-search"></i>
+         <input  type="text" pInputText (ngModel)="value"  />
+       </span>
+     </ng-template>
+ </p-overlayPanel>
+   <button type="button" pButton icon="pi pi-shopping-cart"  ></button>
+ 
+   </div>
+ <div class="slidemenu">
+ <p-slideMenu #menu [model]="items" [popup]="true" [viewportHeight]="450" [menuWidth]="290" [style]="{ width: '290px' }">
+   
+ </p-slideMenu>
+ </div>

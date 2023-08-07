@@ -1,0 +1,17 @@
+/* Stile del contenitore */
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    width: 100%; /* Imposta la larghezza del contenitore al 100% della larghezza della viewport */
+    overflow: hidden; /* Nasconde eventuali contenuti dell'immagine che superano i limiti del contenitore */
+  }
+  
+  /* Stile dell'immagine */
+  .image-container p-image {
+    height: auto; /* Imposta l'altezza dell'immagine in base alla larghezza del contenitore */
+    object-fit: cover; /* Taglia e adatta l'immagine al contenitore mantenendo l'aspetto */
+    margin-top: 0;
+  }
+  

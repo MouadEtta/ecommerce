@@ -1,0 +1,39 @@
+
+:host ::ng-deep .p-button{
+    background-color: transparent!important;
+    border-color: transparent;
+}
+:host ::ng-deep .p-button:hover{
+    background-color: transparent!important;
+    border-color: transparent;
+}  
+:host ::ng-deep .p-button:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+
+.header {
+    display: flex;
+   
+    align-items: center;
+    /* Puoi regolare lo spazio intorno all'header come desideri */
+  }
+  
+  .logo-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .logo-container img {
+    max-height: 70px; /* Altezza del logo */
+    margin-left: auto;
+    margin-right: 42%;
+    margin-top: 0px;
+  }
+  
+  .menu-icon-container {
+    margin-left: auto;
+  }
+  
