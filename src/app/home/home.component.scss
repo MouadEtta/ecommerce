@@ -1,17 +1,79 @@
-/* Stile del contenitore */
-.image-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    height: 100vh;
-    width: 100%; /* Imposta la larghezza del contenitore al 100% della larghezza della viewport */
-    overflow: hidden; /* Nasconde eventuali contenuti dell'immagine che superano i limiti del contenitore */
-  }
+.image-container{
+  background-image: url("../../assets/bsk.jpg");
+  height: 450px;
+  background-size:cover;
+  background-position:center;
+}
+h1{
+  color:white;
+  margin-top: 0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: bold;
+  position:absolute;
+  top :35%;
+  left:60%;
+  font-size:70px
+}
+@media (max-width:1000px) {
+
+h1{
+  position:absolute;
+  top:40%;
+  left:50%;
+  font-size: 70px;
+}
   
-  /* Stile dell'immagine */
-  .image-container p-image {
-    height: auto; /* Imposta l'altezza dell'immagine in base alla larghezza del contenitore */
-    object-fit: cover; /* Taglia e adatta l'immagine al contenitore mantenendo l'aspetto */
-    margin-top: 0;
+}
+@media (max-width:800px) {
+
+  h1{
+    position:absolute;
+    top:40%;
+    left:50%;
+    font-size: 45px;
+  }
+    
+}
+
+@media (max-width:500px) {
+
+  h1{
+    position:absolute;
+    top:40%;
+    left: 45%;
+    font-size: 30px;
+  }
+    
+  }
+  @media (max-width:300px) {
+
+    h1{
+      position:absolute;
+      top:45%;
+      left: 35%;
+      font-size: 30px;
+    }
+      
+    }
+
+.product-content h3 {
+  color: white;
+}
+.product-content h5 {
+  color: white;
+}
+.product-item{
+  margin-top:5%;
+}
+.product-item-content img.product-image {
+  max-width: 80%; /* Imposta la larghezza massima del'immagine al 100% */
+  max-height: 100%; /* Imposta l'altezza massima dell'immagine al 100% */
+}
+@media (max-width:500px) {
+
+  .product-item-content img.product-image {
+    max-width: 90%; /* Imposta la larghezza massima del'immagine al 100% */
+    max-height: 100%; /* Imposta l'altezza massima dell'immagine al 100% */
+  }
   }
   

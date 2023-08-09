@@ -33,9 +33,15 @@ export class HomeComponent {
           },
           {
               breakpoint: '1100px',
-              numVisible: 1,
-              numScroll: 1
-          }
+              numVisible: 2,
+              numScroll: 2
+          },
+          {
+            breakpoint: '844px',
+            numVisible: 2,
+            numScroll: 2
+        },
+       
       ];
   }
 
