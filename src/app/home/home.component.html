@@ -1,25 +1,14 @@
 <app-header></app-header>
 <div class="image-container">
-    <div class="title first banner">
+    <div class="title-firstbanner">
         <h1>BASKETBALL KITS SALE</h1>
     </div>
 </div>
-<p-carousel [value]="products" [numVisible]="3" [numScroll]="1" [responsiveOptions]="responsiveOptions">
-    <ng-template let-product pTemplate="item">
-        <div class="product-item">
-            <div class="product-item-content">
-                <div class="mb-3">
-                    <img src="{{ product.image }}"
-                        [alt]="product.name" class="product-image" />
-                </div>
-                <div class="product-content">
-                    <h3 class="mb-1">{{ product.name }}</h3>
-                    <h5 class="mt-0 mb-3">{{ '$' + product.price }}</h5>
-                    <p-tag [value]="product.inventoryStatus"
-                        [severity]="getSeverity(product.inventoryStatus)">
-                    </p-tag>
-                </div>
-            </div>
-        </div>
-    </ng-template>
-</p-carousel>
+<app-carousel [products]="firstbannerproducts"></app-carousel>
+<div class="image-container2">
+    <div class="title-secondbanner">
+        <h1>FOOTBALL NEW ARRIVALS</h1>
+    </div>
+</div>
+<app-carousel [products]="secondbannerproducts"></app-carousel>
+<app-footer></app-footer>

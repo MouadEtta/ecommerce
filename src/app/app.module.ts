@@ -3,6 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
+library.add(faHeart);
+
 //primeng components
 import { SlideMenuModule } from 'primeng/slidemenu';
 import { ButtonModule } from 'primeng/button';
@@ -20,12 +25,16 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { ProductService } from 'src/service/productservice';
+import { CarouselComponent } from './carousel/carousel.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    CarouselComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +50,8 @@ import { ProductService } from 'src/service/productservice';
     CarouselModule ,
     TagModule,
     CardModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    FontAwesomeModule
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]

@@ -1,0 +1,21 @@
+<p-carousel [value]="products" [numVisible]="3" [numScroll]="1" [responsiveOptions]="responsiveOptions">
+    <ng-template let-product pTemplate="item">
+        <div class="product-item">
+            <div class="product-item-content">
+                <div class="mb-3">
+                    <img src="{{ product.image }}"
+                        [alt]="product.name" class="product-image" />
+                </div>
+                <div class="product-content">
+                    <div> <h3 class="mb-1">{{ product.name }}</h3>
+                        <button (click)="toggleFavorite()" class="favorite-button" [class.active]="isFavorite">
+                            <i class="pi pi-heart"></i>
+                          </button>
+                    </div>
+                   
+                    <h5 class="mt-0 mb-3">{{ '$' + product.price }}</h5>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</p-carousel>

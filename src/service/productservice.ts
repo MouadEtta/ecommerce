@@ -149,7 +149,94 @@ export class ProductService {
                 rating: 4
             },
 
-        ];
+       
+        {
+            id: '1000',
+            code: 'f230fh0g3',
+            name: 'Nike Tiempo Legend 10 Elite',
+            description: 'Product Description',
+            image: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/29619a48-5bf8-41a1-ab51-495241edbd97/scarpa-da-calcio-per-terreni-duri-tiempo-legend-10-elite-tF1ln5.png',
+            price: 260,
+            category: 'football-shoes',
+            quantity: 24,
+            inventoryStatus: 'INSTOCK',
+            rating: 5
+        },
+        {
+            id: '1001',
+            code: 'nvklal433',
+            name: 'Nike Phantom GX Elite',
+            description: 'Product Description',
+            image: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/8fc44f53-3ed5-4f1b-b7b0-6f4c38c59863/scarpa-da-calcio-per-terreni-duri-phantom-gx-elite-C0D3tn.png',
+            price: 260,
+            category: 'football-shoes',
+            quantity: 61,
+            inventoryStatus: 'OUTOFSTOCK',
+            rating: 4
+        },
+        {
+            id: '1002',
+            code: 'zz21cz3c1',
+            name: 'Nike Phantom Luna Elite',
+            description: 'Product Description',
+            image: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/4b3db5fe-fe46-4b35-b98b-0a53c34d3f26/scarpa-da-calcio-per-terreni-duri-phantom-luna-elite-QtMBWk.png',
+            price: 280,
+            category: 'football-shoes',
+            quantity: 2,
+            inventoryStatus: 'LOWSTOCK',
+            rating: 3
+        },
+        {
+            id: '1003',
+            code: '244wgerg2',
+            name: 'Liverpool FC 2023/24 Match-Away',
+            description: 'Product Description',
+            image: 'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/d3a7a8d3-276c-4ca4-949a-2c240a708425/maglia-da-calcio-dri-fit-adv-liverpool-fc-2023-24-match-da-away-HVws4H.png',
+            price: 150,
+            category: 'football-kits',
+            quantity: 25,
+            inventoryStatus: 'INSTOCK',
+            rating: 5
+        },
+        {
+            id: '1004',
+            code: 'h456wer53',
+            name: 'FC Barcelona 2023/24 Match - Home',
+            description: 'Product Description',
+            image: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/6cf7d3b3-6e58-431e-96ba-27f9ca987d19/maglia-da-calcio-dri-fit-adv-fc-barcelona-2023-24-match-da-home-kXR3fZ.png',
+            price: 150,
+            category: 'football-kits',
+            quantity: 73,
+            inventoryStatus: 'INSTOCK',
+            rating: 4
+        },
+        {
+            id: '1005',
+            code: 'av2231fwg',
+            name: 'Paris Saint-Germain 2023/24 Match-Home',
+            description: 'Product Description',
+            image: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/8031439b-3e98-4c8c-9774-54d1ef2f2b3e/maglia-da-calcio-dri-fit-adv-paris-saint-germain-2023-24-match-da-home-6J7VFC.png',
+            price: 150,
+            category: 'football-kits',
+            quantity: 0,
+            inventoryStatus: 'OUTOFSTOCK',
+            rating: 4
+        },
+        {
+            id: '1006',
+            code: 'bib36pfvm',
+            name: 'Tottenham Hotspur 2023/24 Stadium - Home',
+            description: 'Product Description',
+            image: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/1ed67a0f-21e1-4ed7-ad61-bb0cde6df0fa/maglia-da-calcio-dri-fit-tottenham-hotspur-2023-24-stadium-da-home-dcZgXc.png',
+            price: 95,
+            category: 'football-kits',
+            quantity: 5,
+            inventoryStatus: 'LOWSTOCK',
+            rating: 3
+        },
+       
+    ];
+    
     }
 
     getProductsMini() {
@@ -157,7 +244,7 @@ export class ProductService {
     }
 
     getProductsSmall() {
-        return Promise.resolve(this.getProductsData().slice(0, 10));
+        return Promise.resolve(this.getProductsData());
     }
 
     getProducts() {

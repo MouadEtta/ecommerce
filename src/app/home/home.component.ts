@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Product } from '../../domain/product';
 import { ProductService } from '../../service/productservice';
+import { elementAt } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -8,15 +9,33 @@ import { ProductService } from '../../service/productservice';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  products!: Product[] ;
+  firstbannerproducts!: Product[] ;
+  secondbannerproducts!: Product[] ;
 
   responsiveOptions: any[] | undefined;
 
   constructor(private productService: ProductService) {}
+  isFavorite: boolean = false;
+
+  toggleFavorite() {
+    this.isFavorite = !this.isFavorite;
+  }
 
   ngOnInit() {
+   let firstbannerproducts: Product[] = [];
+   let secondbannerproducts: Product[] = [];
+
       this.productService.getProductsSmall().then((products) => {
-          this.products = products;
+        for(const element of products){
+            if(element.category.includes("football")){
+                secondbannerproducts.push(element);
+            }
+            else{
+                firstbannerproducts.push(element);
+            }
+        }
+          this.firstbannerproducts = firstbannerproducts;
+          this.secondbannerproducts = secondbannerproducts;
           console.log(products);
       });
 
