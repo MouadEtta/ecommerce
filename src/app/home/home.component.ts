@@ -4,77 +4,102 @@ import { ProductService } from '../../service/productservice';
 import { elementAt } from 'rxjs';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+    selector: 'app-home',
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  firstbannerproducts!: Product[] ;
-  secondbannerproducts!: Product[] ;
+    firstbannerproducts!: Product[];
+    secondbannerproducts!: Product[];
+    productsSale!: Product[];
+  
+    responsiveOptions: any[] | undefined;
 
-  responsiveOptions: any[] | undefined;
+    constructor(private productService: ProductService) { }
+    isFavorite: boolean = false;
 
-  constructor(private productService: ProductService) {}
-  isFavorite: boolean = false;
+    toggleFavorite() {
+        this.isFavorite = !this.isFavorite;
+    }
 
-  toggleFavorite() {
-    this.isFavorite = !this.isFavorite;
-  }
+    ngOnInit() {
+        let firstbannerproducts: Product[] = [];
+        let secondbannerproducts: Product[] = [];
+        this.getproducts();
 
-  ngOnInit() {
-   let firstbannerproducts: Product[] = [];
-   let secondbannerproducts: Product[] = [];
+console.log("fanuclo");
+        this.responsiveOptions = [
+            {
+                breakpoint: '1400px',
+                numVisible: 3,
+                numScroll: 3
+            },
+            {
+                breakpoint: '1220px',
+                numVisible: 2,
+                numScroll: 2
+            },
+            {
+                breakpoint: '1100px',
+                numVisible: 2,
+                numScroll: 2
+            },
+            {
+                breakpoint: '844px',
+                numVisible: 2,
+                numScroll: 2
+            },
 
-      this.productService.getProductsSmall().then((products) => {
-        for(const element of products){
-            if(element.category.includes("football")){
-                secondbannerproducts.push(element);
+        ];
+    }
+    getproducts() : Promise<any> {
+        return new Promise<any>((resolve, reject) => {
+          this.productService.getProductsSale().subscribe({
+            next: (response: any) => 
+            {
+              this.productsSale = response;
+              this.productBanner(this.productsSale);
+              console.log(this.productsSale);
+              resolve(this.productsSale);
+            },
+            error: (error: any) => 
+            {
+              reject(error);
+            }
+          });
+        });
+      }
+    productBanner(productsSale: Product[]) {
+        this.firstbannerproducts = [];
+        this.secondbannerproducts = [];
+        for( let i in productsSale){
+            let product = productsSale[i]; 
+            if(product.categoria?.includes("basket")){
+                this.firstbannerproducts.push(product);
             }
             else{
-                firstbannerproducts.push(element);
+                this.secondbannerproducts.push(product);
             }
         }
-          this.firstbannerproducts = firstbannerproducts;
-          this.secondbannerproducts = secondbannerproducts;
-          console.log(products);
-      });
-
-      this.responsiveOptions = [
-          {
-              breakpoint: '1400px',
-              numVisible: 3,
-              numScroll: 3
-          },
-          {
-              breakpoint: '1220px',
-              numVisible: 2,
-              numScroll: 2
-          },
-          {
-              breakpoint: '1100px',
-              numVisible: 2,
-              numScroll: 2
-          },
-          {
-            breakpoint: '844px',
-            numVisible: 2,
-            numScroll: 2
-        },
-       
-      ];
-  }
-
-  getSeverity(status: string) {
-      switch (status) {
-          case 'INSTOCK':
-              return 'success';
-          case 'LOWSTOCK':
-              return 'warning';
-          case 'OUTOFSTOCK':
-              return 'danger';
-          default:
-            return 'shutup';
-      }
+    }
+      
     
-  }
+    
+      getData(): Promise<any> {
+        return this.getproducts();
+      }
+
+    getSeverity(status: string) {
+        switch (status) {
+            case 'INSTOCK':
+                return 'success';
+            case 'LOWSTOCK':
+                return 'warning';
+            case 'OUTOFSTOCK':
+                return 'danger';
+            default:
+                return 'shutup';
+        }
+
+    }
 }

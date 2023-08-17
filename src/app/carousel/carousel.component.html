@@ -3,17 +3,17 @@
         <div class="product-item">
             <div class="product-item-content">
                 <div class="mb-3">
-                    <img src="{{ product.image }}"
+                    <img src="{{ product.linkimmagine }}"
                         [alt]="product.name" class="product-image" />
                 </div>
                 <div class="product-content">
-                    <div> <h3 class="mb-1">{{ product.name }}</h3>
+                    <div> <h3 class="mb-1">{{ product.nome }}</h3>
                         <button (click)="toggleFavorite()" class="favorite-button" [class.active]="isFavorite">
                             <i class="pi pi-heart"></i>
                           </button>
                     </div>
                    
-                    <h5 class="mt-0 mb-3">{{ '$' + product.price }}</h5>
+                    <h5 class="mt-0 mb-3">{{ '$' + product.prezzo }}</h5>
                 </div>
             </div>
         </div>
