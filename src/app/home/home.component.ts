@@ -27,9 +27,8 @@ export class HomeComponent {
         let secondbannerproducts: Product[] = [];
         this.getproducts();
 
-console.log("fanuclo");
         this.responsiveOptions = [
-            {
+            {  
                 breakpoint: '1400px',
                 numVisible: 3,
                 numScroll: 3

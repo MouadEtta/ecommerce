@@ -7,10 +7,11 @@
                         [alt]="product.name" class="product-image" />
                 </div>
                 <div class="product-content">
-                    <div> <h3 class="mb-1">{{ product.nome }}</h3>
-                        <button (click)="toggleFavorite()" class="favorite-button" [class.active]="isFavorite">
-                            <i class="pi pi-heart"></i>
-                          </button>
+                    <div>
+                        <h3 class="mb-1">{{ product.nome }}</h3>
+                        <!-- Bottone quando product.preferito è true -->
+                        <app-preferiti [product]="product"> </app-preferiti>
+
                     </div>
                    
                     <h5 class="mt-0 mb-3">{{ '$' + product.prezzo }}</h5>

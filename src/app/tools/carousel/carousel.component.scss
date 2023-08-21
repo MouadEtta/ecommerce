@@ -18,19 +18,4 @@
       max-height: 100%; /* Imposta l'altezza massima dell'immagine al 100% */
     }
     }
-    .favorite-button {
-      background-color: transparent;
-      border: none;
-      color:white;
-      cursor: pointer;
-    
-      i {
-        font-size: 1.5rem;
-        margin-right: 0.5rem;
-      }
-    
-      &.active {
-        color: red; // Cambia il colore quando è attivo
-      }
-    }
     

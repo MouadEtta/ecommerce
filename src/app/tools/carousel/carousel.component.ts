@@ -13,7 +13,7 @@ export class CarouselComponent {
   responsiveOptions: any[] | undefined;
   isFavorite: boolean = false;
 
-  toggleFavorite() {
+  toggleFavorite(  product:Product) {
     this.isFavorite = !this.isFavorite;
   }
 

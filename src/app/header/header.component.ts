@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { Router } from '@angular/router';
+import { SlideMenu } from 'primeng/slidemenu';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -7,9 +10,11 @@ import { MenuItem } from 'primeng/api';
 })
 export class HeaderComponent {
     showSearchDialog: boolean = false;
-    items!: MenuItem[] ;
+    @ViewChild('menu') menu!: SlideMenu;
+    items!: MenuItem[];
     value!: string ;
-   
+    
+    constructor(public router: Router){};
 
   toggleSearch() {
 
@@ -18,30 +23,47 @@ export class HeaderComponent {
         this.items = [
             {
                 label: 'category',
-                icon: 'pi pi-tags',
                 items: [
                     {
-                        label:'t-shirt'
+                        label:'jersey',
+                        command: () => {
+                            this.handleMenuItemClick('jersey');}
                     },
                     {
-                        label:'shorts'
+                        label:'shorts',
+                        command: () => {
+                            this.handleMenuItemClick('shorts');}
                     },
                     {
                         label:'complete kits',
+                        command: () => {
+                            this.handleMenuItemClick('complete kits');}
                     },
                     {
                         label:'shoes',
+                        command: () => {
+                            this.handleMenuItemClick('shoes');}
                     },
                     {
                         label:'bombers',
+                        command: () => {
+                            this.handleMenuItemClick('bombers');}
                     },
                     {
                         label:'accessories',
+                        command: () => {
+                            this.handleMenuItemClick('accessories');}
                     },
                     {
                         label:'objects',
+                        command: () => {
+                            this.handleMenuItemClick('objects');}
                     },
                 ]
+            },
+            {
+                label: 'Sales',
+                
             },
            
             {
@@ -54,4 +76,11 @@ export class HeaderComponent {
         ];
         console.log(this.items);
     }
+
+ 
+    handleMenuItemClick(event: any) {
+        console.log("sono qui")
+       this.router.navigate(['ProductPage'],{state:event})
+    }
+    
 }

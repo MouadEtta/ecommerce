@@ -23,8 +23,20 @@ import { Product } from '../domain/product';
                 return throwError(() => new Error (err));
               })
             );
-          }};
-
+          }
+          
+          changePreferito(body:any){
+            
+            let url =this.apiUrl;
+            return this.http.get<any[]>(url+"/preferito",body)
+              .pipe(map((res: any) => {
+                return res;
+              }), catchError((err: any) => {
+                return throwError(() => new Error (err));
+              })
+            );
+          }
+};
 /*     getProductsMini() {
         return Promise.resolve(this.getProductsData().slice(0, 5));
     }

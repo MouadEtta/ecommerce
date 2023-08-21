@@ -25,11 +25,13 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { ProductService } from 'src/service/productservice';
-import { CarouselComponent } from './carousel/carousel.component';
+import { CarouselComponent } from './tools/carousel/carousel.component';
 import { FooterComponent } from './footer/footer.component';
 import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 import { MessageService } from 'primeng/api';
+import { PreferitiComponent } from './tools/preferiti/preferiti.component';
+import { ProductPageComponent } from './pages/product-page/product-page.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { MessageService } from 'primeng/api';
     HeaderComponent,
     HomeComponent,
     CarouselComponent,
-    FooterComponent
+    FooterComponent,
+    PreferitiComponent,
+    ProductPageComponent
   ],
   imports: [
     BrowserModule,

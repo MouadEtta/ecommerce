@@ -19,7 +19,7 @@
  
    </div>
  <div class="slidemenu">
- <p-slideMenu #menu [model]="items" [popup]="true" [viewportHeight]="450" [menuWidth]="290" [style]="{ width: '290px' }">
+ <p-slideMenu #menu [model]="items" [popup]="true" [viewportHeight]="450" [menuWidth]="290" [style]="{ width: '290px' }" onItemClick="handleMenuItemClick($event)">
    
  </p-slideMenu>
  </div>

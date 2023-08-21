@@ -1,0 +1,5 @@
+<div>
+    <button (click)="toggleFavorite(product)" class="favorite-button">
+        <i class="pi" [ngClass]="{'pi-heart': !isFavorite, 'pi-heart-fill': isFavorite}"></i>
+    </button>
+</div>
