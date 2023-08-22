@@ -1,1 +1,5 @@
-<p>product-page works!</p>
+<div class="grid-container">
+    <div class="grid-item" *ngFor="let product of products">
+        <app-card-product [product]="product"></app-card-product>
+    </div>
+</div>

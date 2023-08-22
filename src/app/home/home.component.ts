@@ -68,6 +68,10 @@ export class HomeComponent {
           });
         });
       }
+      getData(): Promise<any> {
+        return this.getproducts();
+      }
+
     productBanner(productsSale: Product[]) {
         this.firstbannerproducts = [];
         this.secondbannerproducts = [];
@@ -84,10 +88,6 @@ export class HomeComponent {
       
     
     
-      getData(): Promise<any> {
-        return this.getproducts();
-      }
-
     getSeverity(status: string) {
         switch (status) {
             case 'INSTOCK':

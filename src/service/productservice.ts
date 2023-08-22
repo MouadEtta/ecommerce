@@ -25,17 +25,19 @@ import { Product } from '../domain/product';
             );
           }
           
-          changePreferito(body:any){
-            
-            let url =this.apiUrl;
-            return this.http.get<any[]>(url+"/preferito",body)
+         getProductsByCategory(body:any){
+          let url =this.apiUrl;
+          console.log(body);
+            console.log(url+"/productsByCategory")
+            return this.http.post<any[]>(url+"/productsByCategory",body)
               .pipe(map((res: any) => {
                 return res;
               }), catchError((err: any) => {
                 return throwError(() => new Error (err));
               })
             );
-          }
+
+         }
 };
 /*     getProductsMini() {
         return Promise.resolve(this.getProductsData().slice(0, 5));

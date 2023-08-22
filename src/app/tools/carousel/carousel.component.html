@@ -1,22 +1,5 @@
 <p-carousel [value]="products" [numVisible]="3" [numScroll]="1" [responsiveOptions]="responsiveOptions">
     <ng-template let-product pTemplate="item">
-        <div class="product-item">
-            <div class="product-item-content">
-                <div class="mb-3">
-                    <img src="{{ product.linkimmagine }}"
-                        [alt]="product.name" class="product-image" />
-                </div>
-                <div class="product-content">
-                    <div>
-                        <h3 class="mb-1">{{ product.nome }}</h3>
-                        <!-- Bottone quando product.preferito è true -->
-                        <app-preferiti [product]="product"> </app-preferiti>
-
-                    </div>
-                   
-                    <h5 class="mt-0 mb-3">{{ '$' + product.prezzo }}</h5>
-                </div>
-            </div>
-        </div>
+        <app-card-product [product]="product"></app-card-product>
     </ng-template>
 </p-carousel>

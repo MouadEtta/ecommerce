@@ -19,6 +19,7 @@ import { ImageModule } from 'primeng/image';
 import { CarouselModule } from 'primeng/carousel';
 import { TagModule } from 'primeng/tag';
 import { CardModule } from 'primeng/card';
+import { GalleriaModule } from 'primeng/galleria';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,6 +33,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MessageService } from 'primeng/api';
 import { PreferitiComponent } from './tools/preferiti/preferiti.component';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
+import { CardProductComponent } from './tools/card-product/card-product.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,8 @@ import { ProductPageComponent } from './pages/product-page/product-page.componen
     CarouselComponent,
     FooterComponent,
     PreferitiComponent,
-    ProductPageComponent
+    ProductPageComponent,
+    CardProductComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +62,8 @@ import { ProductPageComponent } from './pages/product-page/product-page.componen
     CardModule,
     FlexLayoutModule,
     FontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
+    GalleriaModule
   ],
   providers: [ProductService,HttpClient,MessageService],
   bootstrap: [AppComponent]

@@ -1,0 +1,11 @@
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 4 elementi per riga */
+        gap: 20px; /* Spazio tra gli elementi */
+    }
+    
+    .grid-item {
+        /* Aggiungi eventuali stili per ogni elemento */
+    }
+    
