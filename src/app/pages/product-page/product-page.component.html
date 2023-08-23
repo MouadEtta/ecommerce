@@ -1,3 +1,13 @@
+<div class="filters">
+    
+<p-sidebar [(visible)]="sidebarVisible">
+    <p-panelMenu [model]="items" [style]="{'width':'300px'}" [multiple]="true"></p-panelMenu>
+
+</p-sidebar>
+<div class="filterbutton">
+<p-button (click)="sidebarVisible = true" label="filtri"></p-button>
+</div>
+</div>
 <div class="grid-container">
     <div class="grid-item" *ngFor="let product of products">
         <app-card-product [product]="product"></app-card-product>

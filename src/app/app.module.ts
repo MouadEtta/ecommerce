@@ -20,6 +20,12 @@ import { CarouselModule } from 'primeng/carousel';
 import { TagModule } from 'primeng/tag';
 import { CardModule } from 'primeng/card';
 import { GalleriaModule } from 'primeng/galleria';
+import { SidebarModule } from 'primeng/sidebar';
+import { PanelMenuModule } from 'primeng/panelmenu';
+
+
+
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -63,7 +69,9 @@ import { CardProductComponent } from './tools/card-product/card-product.componen
     FlexLayoutModule,
     FontAwesomeModule,
     HttpClientModule,
-    GalleriaModule
+    GalleriaModule,
+    SidebarModule,
+    PanelMenuModule
   ],
   providers: [ProductService,HttpClient,MessageService],
   bootstrap: [AppComponent]

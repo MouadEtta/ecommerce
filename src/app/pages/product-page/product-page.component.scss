@@ -1,11 +1,39 @@
 
+:host ::ng-deep .p-button{
+    background-color: transparent!important;
+    border-color: transparent;
+}
+:host ::ng-deep .p-button:hover{
+    background-color: transparent!important;
+    border-color: transparent;
+}  
+:host ::ng-deep .p-button:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+.grid-container {
+    display: grid;
+    gap: 20px; /* Spazio tra gli elementi */
+    grid-template-columns: repeat(3, 1fr); 
+    margin-left:10%/* 3 elementi per riga per default */;
+}
+
+@media (max-width: 1200px) {
     .grid-container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr); /* 4 elementi per riga */
-        gap: 20px; /* Spazio tra gli elementi */
+        grid-template-columns: repeat(2 ,1fr); /* Passa a 2 elementi per riga su schermi più piccoli */
     }
-    
-    .grid-item {
-        /* Aggiungi eventuali stili per ogni elemento */
+}
+@media (max-width: 800px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 elementi per riga su schermi ancora più piccoli */
     }
-    
+}
+.filters p{
+    color:white;
+    margin-bottom: 0;
+}
+.filterbutton{
+    margin-left: 10%;
+        
+}
