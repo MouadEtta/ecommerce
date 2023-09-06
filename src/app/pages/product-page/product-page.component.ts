@@ -15,8 +15,20 @@ export class ProductPageComponent {
   activeIndex: number = 0;
   sidebarVisible: boolean = false;
   items!: MenuItem[];
+  selectedvalue=25;
+  startvalue=30;
+  endvalue=70;
+rangeValues: number[] = [20, 80];
 
+ formatLabel(value: number) {
+    if (value >= 1000) {
+      return Math.round(value / 1000) + 'k';
+    }
+    const stringValue=value.toString();
+    return stringValue;
+  }
   constructor(private product_s: ProductService, public router: Router) { }
+  
 
   ngOnInit() {
     console.log(history.state);

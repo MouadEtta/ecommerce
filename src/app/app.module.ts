@@ -22,9 +22,13 @@ import { CardModule } from 'primeng/card';
 import { GalleriaModule } from 'primeng/galleria';
 import { SidebarModule } from 'primeng/sidebar';
 import { PanelMenuModule } from 'primeng/panelmenu';
+import { SliderModule } from 'primeng/slider';
+
+import {MatSliderModule} from '@angular/material/slider';
+import { Ng5SliderModule } from 'ng5-slider';
 
 
-
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -40,6 +44,7 @@ import { MessageService } from 'primeng/api';
 import { PreferitiComponent } from './tools/preferiti/preferiti.component';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
 import { CardProductComponent } from './tools/card-product/card-product.component';
+import { ProductFilterComponent } from './tools/product-filter/product-filter.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +55,8 @@ import { CardProductComponent } from './tools/card-product/card-product.componen
     FooterComponent,
     PreferitiComponent,
     ProductPageComponent,
-    CardProductComponent
+    CardProductComponent,
+    ProductFilterComponent
   ],
   imports: [
     BrowserModule,
@@ -71,7 +77,10 @@ import { CardProductComponent } from './tools/card-product/card-product.componen
     HttpClientModule,
     GalleriaModule,
     SidebarModule,
-    PanelMenuModule
+    PanelMenuModule,
+    SliderModule,
+    MatSliderModule,
+    
   ],
   providers: [ProductService,HttpClient,MessageService],
   bootstrap: [AppComponent]

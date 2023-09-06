@@ -1,15 +1,23 @@
-<div class="filters">
-    
-<p-sidebar [(visible)]="sidebarVisible">
-    <p-panelMenu [model]="items" [style]="{'width':'300px'}" [multiple]="true"></p-panelMenu>
-
-</p-sidebar>
-<div class="filterbutton">
-<p-button (click)="sidebarVisible = true" label="filtri"></p-button>
-</div>
-</div>
-<div class="grid-container">
-    <div class="grid-item" *ngFor="let product of products">
-        <app-card-product [product]="product"></app-card-product>
+<div class="productPage">
+    <div class="filters">
+        <p-sidebar [(visible)]="sidebarVisible" [style]="{'width':'350px'}">
+            <div class="sidemenuItems">
+                <h3> PRICE RANGE</h3>
+                <mat-slider min="0" max="500" [style]="{'width':'250px'}"    discrete [displayWith]="formatLabel">
+                    <input value="" matSliderStartThumb>
+                    <input value="500" matSliderEndThumb>
+                  </mat-slider>
+                <br>
+                <p-panelMenu [model]="items" [style]="{'width':'300px'}" [multiple]="true"></p-panelMenu>
+            </div>
+        </p-sidebar>
+        <div class="filterbutton">
+            <p-button (click)="sidebarVisible = true" label="FILTRI"></p-button>
+        </div>
+    </div>
+    <div class="grid-container">
+        <div class="grid-item" *ngFor="let product of products">
+            <app-card-product [product]="product"></app-card-product>
+        </div>
     </div>
 </div>
